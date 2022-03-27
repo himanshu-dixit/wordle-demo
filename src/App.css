@@ -1,3 +1,32 @@
 html.dark {
-  background-color: rgb(15, 23, 42);
+  background-color: rgb(19, 20, 22);
+}
+
+.bg-cyan-500 {
+  background: #605bff;
+}
+
+.border-cyan-500 {
+  border-color: #605bff;
+}
+
+.bg-orange-500 {
+  background: #e93b68;
+}
+
+.border-orange-500 {
+  border-color: #e93b68;
+}
+
+.dark .dark\:bg-slate-900 {
+  --tw-bg-opacity: 1;
+  background-color: #16181c;
+}
+
+.border-yellow-500 {
+  background: #ec8a43;
+}
+
+.bg-yellow-500 {
+  border-color: #ec8a43;
 }

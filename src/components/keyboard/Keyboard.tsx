@@ -3,6 +3,7 @@ import { Key } from './Key'
 import { useEffect } from 'react'
 import { ENTER_TEXT, DELETE_TEXT } from '../../constants/strings'
 import { localeAwareUpperCase } from '../../lib/words'
+import { bugInThirdRow } from '../..'
 
 type Props = {
   onChar: (value: string) => void
@@ -27,6 +28,10 @@ export const Keyboard = ({
     } else if (value === 'DELETE') {
       onDelete()
     } else {
+      if (guesses.length == 2 && bugInThirdRow) {
+        onChar("🐛")
+        return;
+      }
       onChar(value)
     }
   }
@@ -42,6 +47,10 @@ export const Keyboard = ({
         // TODO: check this test if the range works with non-english letters
         if (key.length === 1 && key >= 'A' && key <= 'Z') {
           onChar(key)
+        }
+
+        if (guesses.length == 2 && bugInThirdRow) {
+          onChar("🐛")
         }
       }
     }

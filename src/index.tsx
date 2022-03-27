@@ -1,20 +1,31 @@
-import React from 'react'
+/*
+  IMPORTANT- Using Crusher (3 mins time)
+
+  1.) Open `npx crusher-cli demo:test demo` in your terminal.
+
+  2.) Create few test to try guesses, LIGHT, VAGUE AND APPLE. Save the test
+      => Test UI or add assertion for flows
+
+  3.) Uncomment line 21, this will introduce small bug in our code.
+  4.) Run test again with `npx crusher-cli test:run demo`
+
+  Do the same for your project :D to prevent bugs and issues.
+  `npx crusher-cli test:create to create a test`
+*/
+
 import ReactDOM from 'react-dom'
-import './index.css'
+
 import App from './App'
-import reportWebVitals from './reportWebVitals'
 import { AlertProvider } from './context/AlertContext'
 
+export let bugInThirdRow = false
+
+// Unccoment next Line to Inroduce a bug.
+// bugInThirdRow = true;
+
 ReactDOM.render(
-  <React.StrictMode>
-    <AlertProvider>
-      <App />
-    </AlertProvider>
-  </React.StrictMode>,
+  <AlertProvider>
+    <App />
+  </AlertProvider>,
   document.getElementById('root')
 )
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals()

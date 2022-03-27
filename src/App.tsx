@@ -34,7 +34,7 @@ import {
   getStoredIsHighContrastMode,
 } from './lib/localStorage'
 import { default as GraphemeSplitter } from 'grapheme-splitter'
-
+import './index.css'
 import './App.css'
 import { AlertContainer } from './components/alerts/AlertContainer'
 import { useAlert } from './context/AlertContext'
@@ -255,7 +255,9 @@ function App() {
             isRevealing={isRevealing}
             currentRowClassName={currentRowClass}
           />
+          <div className="info">First type SLANG, ANGRY, SLATE, APPLE.</div>
         </div>
+
         <Keyboard
           onChar={onChar}
           onDelete={onDelete}

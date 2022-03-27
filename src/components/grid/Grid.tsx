@@ -31,7 +31,7 @@ export const Grid = ({
         />
       ))}
       {guesses.length < MAX_CHALLENGES && (
-        <CurrentRow guess={currentGuess} className={currentRowClassName} />
+        <CurrentRow key={guesses.length} guess={currentGuess} className={currentRowClassName} />
       )}
       {empties.map((_, i) => (
         <EmptyRow key={i} />

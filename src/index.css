@@ -189,3 +189,9 @@ svg.cursor-pointer:hover {
     transform: translate(0, 0);
   }
 }
+
+.info {
+  font-size: 14px;
+  color: #fff;
+  text-align: center;
+}
