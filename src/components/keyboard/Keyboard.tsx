@@ -28,7 +28,7 @@ export const Keyboard = ({
     } else if (value === 'DELETE') {
       onDelete()
     } else {
-      if (guesses.length == 2 && bugInThirdRow) {
+      if (guesses.length === 2 && bugInThirdRow) {
         onChar("🐛")
         return;
       }
@@ -49,7 +49,7 @@ export const Keyboard = ({
           onChar(key)
         }
 
-        if (guesses.length == 2 && bugInThirdRow) {
+        if (guesses.length === 2 && bugInThirdRow) {
           onChar("🐛")
         }
       }
@@ -58,7 +58,7 @@ export const Keyboard = ({
     return () => {
       window.removeEventListener('keyup', listener)
     }
-  }, [onEnter, onDelete, onChar])
+  }, [onEnter, onDelete, onChar,guesses])
 
   return (
     <div>
